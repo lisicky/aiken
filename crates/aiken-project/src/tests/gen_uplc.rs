@@ -2821,8 +2821,6 @@ fn acceptance_test_29_union() {
                                                 .apply(Term::var("k"))
                                                 .apply(Term::var("v")),
                                         )
-                                        .lambda("rest")
-                                        .apply(Term::tail_list().apply(Term::var("left")))
                                         .lambda("v")
                                         .apply(
                                             Term::un_i_data()
@@ -2833,6 +2831,8 @@ fn acceptance_test_29_union() {
                                             Term::un_b_data()
                                                 .apply(Term::fst_pair().apply(Term::var("pair"))),
                                         )
+                                        .lambda("rest")
+                                        .apply(Term::tail_list().apply(Term::var("left")))
                                         .lambda("pair")
                                         .apply(Term::head_list().apply(Term::var("left"))),
                                 )
